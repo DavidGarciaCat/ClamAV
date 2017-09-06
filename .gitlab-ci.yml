@@ -1,0 +1,15 @@
+cache:
+  paths:
+    - vendor/
+
+before_script:
+  - /usr/local/bin/composer install -o
+
+stages:
+  - tests
+
+job_test:
+  stage: tests
+  script:
+    - vendor/phpunit/phpunit/phpunit
+
